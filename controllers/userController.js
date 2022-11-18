@@ -28,7 +28,7 @@ const getAll = async (req, res) => {
     const allUsers = await userService.getAll();
     return res.status(200).json(allUsers);
   } catch (err) {
-    return res.status(500).json({ message: 'Ocorreu um erro no servidor' });
+    return res.status(500).json({ message: 'An error occurred on the server' });
   }
 };
 

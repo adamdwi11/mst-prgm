@@ -11,7 +11,7 @@ const create = async (postInfo) => {
   const foundCategories = await Promise.all(promises);
 
   const allCategoriesValid = foundCategories.every((found) => found !== null);
-  if (!allCategoriesValid) throw new Error('"categoryIds" not found');
+  if (!allCategoriesValid) throw new Error('"categoryId" not found');
 
   const createdPost = await BlogPost.create({ ...postInfo, userId });
   const postId = createdPost.dataValues.id;

@@ -10,7 +10,7 @@ const create = async (req, res) => {
     const createdCategory = await categoryService.create(body.name);
     return res.status(201).json(createdCategory);
   } catch (err) {
-    return res.status(500).json({ message: 'Ocorreu um erro :(' });
+    return res.status(500).json({ message: 'An error has occurred' });
   }
 };
 
@@ -19,7 +19,7 @@ const getAll = async (_req, res) => {
     const categories = await categoryService.getAll();
     return res.status(200).json(categories);
   } catch (err) {
-    return res.status(500).json({ message: 'Ocorreu um erro :(' });
+    return res.status(500).json({ message: 'An error has occurred' });
   }
 };
 
