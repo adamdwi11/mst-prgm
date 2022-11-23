@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -13,8 +14,9 @@ const validateJWT = require('./middlewares/validateJWT');
 const validatePostInfo = require('./middlewares/validatePostInfo');
 
 app.use(express.json());
+app.use(cors());
 
-app.listen(3000, () => console.log('helooo 3000!'));
+app.listen(3300, () => console.log('Hellooo Prgm Team!'));
 
 app.get('/', (request, response) => {
   response.send();
@@ -34,4 +36,4 @@ app.get('/categories', validateJWT, categoryController.getAll);
 
 app.post('/post', validateJWT, validatePostInfo, postController.create);
 
-app.get('/post', validateJWT, postController.getAll);
+app.get('/post', postController.getAll);
