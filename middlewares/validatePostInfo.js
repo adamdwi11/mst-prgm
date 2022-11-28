@@ -4,6 +4,7 @@ const schema = Joi.object({
   title: Joi.string().required(),
   categoryIds: Joi.array().required(),
   content: Joi.string().required(),
+  image: Joi.string().required(),
 });
 
 const validatePostInfo = async (req, res, next) => {
